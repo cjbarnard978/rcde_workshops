@@ -6,11 +6,11 @@
 - **Email**: cehrett AT clemson DOT edu
 
 ## Workshop Description
-This workshop series introduces essential concepts related to LLMs and works through the common steps in an LLM inference workflow. This workshop focuses on efficiently running LLMs, rather than on constructing, training or fine-tuning them. Throughout the sessions, students will learn how to use the Hugging Face Transformers library to run LLMs on the Palmetto 2 cluster. The workshop will also cover how to use the Palmetto 2 cluster to run LLMs on large datasets and how to use the Palmetto2 cluster to run LLMs on multiple GPUs and multiple nodes.
+This workshop series introduces essential concepts related to LLMs and works through the common steps in an LLM inference workflow. This workshop focuses on efficiently running LLMs, rather than on constructing, training or fine-tuning them. Throughout the sessions, students will learn how to use the Hugging Face Transformers library to run LLMs on the Palmetto 2 cluster. The workshop will also cover how to use the Palmetto 2 cluster to run LLMs on large datasets and how to use the Palmetto 2 cluster to run LLMs on multiple GPUs and multiple nodes.
 
 ## Prerequisites
 * **All workshop participants should have a Palmetto 2 cluster account.** If you do not already have an account, you can visit our [getting started page](https://docs.rcd.clemson.edu/palmetto/starting).
-* **Participants should be familiar with the Python programming language.** This requirement could be fulfilled by personal projects, coursework, or completion of the Introduction to [Python Programming workshop series](https://clemsonciti.github.io/rcde_workshops/python_programming/00-index.html).
+* **Participants should be familiar with the Python programming language.** This requirement can be fulfilled by personal projects, coursework, or completion of the Introduction to [Python Programming workshop series](https://clemsonciti.github.io/rcde_workshops/python_programming/00-index.html).
 
 ## Environment
 To run the code in this workshop, you will need a python environment with the appropriate libraries installed. I have created such an environment in a shared space, but that environment will not always be available to you. You can create such an environment yourself as follows.
