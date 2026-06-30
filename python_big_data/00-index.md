@@ -7,7 +7,7 @@
 
 ## Workshop Description
 
-This workshop will demonstrate how to utilize Apache Spark and Python to perform
+This workshop will demonstrate how to use Apache Spark and Python to perform
 large-scale, in-memory data analytics. Learning outcomes of this workshop include
 understanding the overall conceptual design of Spark and demonstrating the advantages
 of using Spark over traditional Hadoop MapReduce. Participants will also learn to

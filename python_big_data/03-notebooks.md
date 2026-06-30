@@ -5,7 +5,7 @@ exercises: 0
 questions:
 - "How do I launch the workshop notebooks and link them to the Spark cluster?"
 objectives:
-- "Be able to set up notebooks to connect to the Spark cluster"
+- "Participants will be able to set up notebooks to connect to the Spark cluster"
 keypoints:
 - "Understand your Spark cluster configuration to optimize notebooks' resource request."
 ---

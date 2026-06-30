@@ -4,7 +4,7 @@
 
 - A unified compute engine and a set of libraries for parallel
 data processing on computer clusters.
-- Click the JupyterHub link
+- Please familiarize yourself with [JupyterHub](https://jupyter.org/hub)
 
 <img src="../fig/01-introduction/01.png" alt="Spark" style="height:400px">
 
@@ -13,23 +13,23 @@ data processing on computer clusters.
 
 - `Unified`: Spark supports a wide range of data analytic tasks over the same
 computing engine and a consistent set of APIs.
-- `Computing engine`: Spark handles loading data from storage systems and
-performs computation on the loaded data (in memory) rather than on permanent storage.
+- `Computing engine`: Spark handles loading data from storage systems. Then, Spark
+performs computation on the data loaded in memory rather than on permanent storage.
 To adhere to the data locality principle, Spark relies on APIs to provide a
 transparent common interface with different storage systems for all applications.
 - `Libraries`: Via its APIs, Spark supports a wide array of internal and
-external libraries for complex data analytic tasks.
+external libraries for complex data analytics tasks.
 
 
 ## 3. A brief history of Spark
 
-- Research project at UC Berkeley AMP Lab in 2009 to address drawbacks of
+- Spark developed from a research project at UC Berkeley AMP Lab in 2009 to address drawbacks of
 Hadoop MapReduce.
 - Paper published in 2010: [Spark: Cluster Computing with Working Sets](https://static.usenix.org/events/hotcloud10/tech/full_papers/Zaharia.pdf)
-- Source code is contributed to Apache in 2013. The project had more than 100
-contributors from more than 30 organizations outside UC Berkeley.
+- Source code was contributed to Apache in 2013. The project had more than 100
+contributors from more than 30 organizations, not just UC Berkeley.
 - Version 1.0 was released in 2014.
-- Currently, Spark is being used extensively in academia and industry
+- Currently, Spark is being used extensively in both academia and industry
 (NASA, CERN, Uber, Netflix …).
 
 ## 4. map and reduce
