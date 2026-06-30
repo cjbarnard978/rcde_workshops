@@ -7,8 +7,8 @@ https://www.simplilearn.com/keras-vs-tensorflow-vs-pytorch-article
 (1) Keras
 
 - Keras is an effective high-level neural network Application Programming Interface (API) written in Python. This open-source neural network library is designed to provide fast experimentation with deep neural networks, and it can run on top of CNTK, TensorFlow, and Theano.
-- Keras focuses on being modular, user-friendly, and extensible. It doesn’t handle low-level computations; instead, it hands them off to another library called the Backend.
-- Keras was adopted and integrated into TensorFlow in mid-2017. Users can access it via the tf.keras module. However, the Keras library can still operate separately and independently.
+- Keras is modular, user-friendly, and extensible. It doesn’t handle low-level computations; instead, it hands them off to another library called the Backend.
+- Keras was adopted and integrated into TensorFlow in mid-2017. Users can access it via the tf.keras module. However, the Keras library can still operate separately and independently from TensorFlow.
 
 (2) Pytorch
 - Pytorch is a relatively new deep learning framework based on Lua Torch.
@@ -28,6 +28,6 @@ https://www.simplilearn.com/keras-vs-tensorflow-vs-pytorch-article
 ![image](https://user-images.githubusercontent.com/43855029/119177851-e6eb9380-ba3a-11eb-88be-938c8c190a50.png)
 
 ### Conclusions:
-- Keras is the easiest Deep Learning Library API. It is easy to transition from Machine Learning based models
+- Keras is the easiest deep learning library API. It is easy to transition to Keras from machine learning based models
 - TensorFlow is the most popular DL library developed by Google. It has the highest number of users
-- Pytorch is developed by Facebook and gaining significant attention from users all over the world
+- Pytorch is developed by Facebook and is gaining significant attention from users all over the world
