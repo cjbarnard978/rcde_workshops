@@ -18,8 +18,8 @@ X = iris.data
 y = iris.target
 ```
 
-### Apply One Hot Encoding to categorize the output:
-- One Hot Encoding represents the categorical data in a probabilistic way that is understandable by the machine.
+### Apply One-Hot Encoding to categorize the output:
+- One-Hot Encoding represents the categorical data in a probabilistic way that is understandable by the machine.
 - For example **cat, dog, deer** can be converted to **0, 1, 2** or **[1 0 0,0 1 0,0 0 1]**
 
 ```python
@@ -79,7 +79,7 @@ model.fit(X_train_scaled, y_train, epochs=100, verbose=1,
 ```
 
 ### Evaluate model
-Evaluate the testing set using given loss function
+Evaluate the testing set using the given loss function
 ```python
 results = model.evaluate(X_test_scaled, y_test, verbose=1)
 print("test loss, test acc:", results)
@@ -90,7 +90,7 @@ print("test loss, test acc:", results)
 predictions = model.predict(X_test_scaled)
 ```
 
-### Inverse transform One Hot Encoding
+### Inverse transform One-Hot Encoding
 ```python
 Y_pred = enc.inverse_transform(predictions)
 Y_test = enc.inverse_transform(y_test)

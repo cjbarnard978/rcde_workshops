@@ -1,65 +1,65 @@
-# Recurrent Neural Network for Timeseries forecasting
+# Recurrent Neural Networks for Timeseries forecasting
 
-## Recurrent Neural Network
+## Recurrent Neural Networks
 
 ### Introduction
-- RNNs are a type of Deep Learning models with built-in feedback mechanisms.
+- RNNs are a type of deep learning model with a built-in feedback mechanism.
 - The output of a particular layer can be **re-fed** as the input in order to predict the output.
 
 ![image](https://user-images.githubusercontent.com/43855029/132912049-167cf37e-66a0-4b54-8024-183ab7785398.png)
 
 [Understanding LSTMS](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
-- A look at detailed when we unroll the RNN loop:
+- A detailed look at unrolling the RNN loop:
 
 ![image](https://user-images.githubusercontent.com/43855029/132911838-0ce7eb99-fd60-44c7-b554-d176fdb45f8b.png)
 
 
-### Types of RNN
+### Types of RNNs
 
 ![image](https://user-images.githubusercontent.com/43855029/132903689-398ef108-660d-47ba-ae46-b783f203e307.png)
 
 ### Applications
-- It is specifically designed for Sequential problems like **Weather forecasta, Stock forecasta, Image captioning, Natural Language Processing, and Speech/Voice Recognition**
+- It is specifically designed for sequential problems like **weather forecasta, stock forecasta, image captioning, natural language processing, and speech/voice recognition**
 
-### Some Disadvantages of RNN:
-- Computationally expensive and reuqire a large memory.
-- RNN is sensitive to changes in parameters and having **Exploding Gradient** or **Vanishing Gradient**
-- In order to resolve the gradient problem of RNN, a method Long-Short Term Memory (LSTM) is proposed.
+### Some Disadvantages of RNNs:
+- Computationally expensive and require a large memory.
+- RNNs are sensitive to changes in parameters and both **exploding gradients** or **vanishing gradients**
+- In order to resolve the gradient problems of RNNs, we can use a method called Long-Short Term Memory (LSTM).
 
-In this limited workshop, we only cover LSTM for timeseries forecast problem.
+In this limited workshop, we will only cover LSTM for timeseries forecast problems.
 
 ## Long-Short Term Memory model - LSTM
 ### Introduction
-- LSTMs are a special kind of RNN — capable of learning long-term dependencies by remembering information for long periods is the default behavior.
+- LSTMs are a special kind of RNN — They are capable of learning long-term dependencies by remembering information for long periods..
 - They were introduced by Hochreiter & Schmidhuber (1997) and were refined and popularized by many people
 - LSTMs are explicitly designed to avoid the long-term dependency problem.
 
-### Comparison between traditional RNN and LSTM
+### Comparison between traditional RNNs and LSTMs
 
 ![image](https://user-images.githubusercontent.com/43855029/132913273-1b7d4765-a8f2-4f2d-b3b9-6910d5d15807.png)
 
-### Step by step walkthrought LSTM:
-[Link](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+### Step by step walkthrough of LSTMs:
+[Understanding LSTMs](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
-# Hands-on exercise on application of LSTM in temperature forecast
-Here, we will access Keras LSTM to forecast temperature at site name Jena (Germany), given information of temperature and other climate variables.
-The tutorial following the [keras website](https://keras.io/examples/timeseries/timeseries_weather_forecasting/), but rewritten in a simpler way for easy understanding.
+# Using LSTMs in temperature forecasting
+We will access Keras LSTM to forecast temperatures at a site named Jena (Germany), given information about temperature and other climate variables.
+This tutorial follows the [Keras website tutorial](https://keras.io/examples/timeseries/timeseries_weather_forecasting/), but has been rewritten in a simpler way for ease of understanding.
 
 ### Climate Data
-- Single station named Jena station in Germany.
-- Data consists of 14 climate variables in every 10 minutes
-- Temporal timeframe 8 year: 01/01/2009 - 12/31/2016
+- Data comes from a single station: Jena, Germany.
+- Data consists of 14 climate variables recorded every 10 minutes
+- 8 year timeframe: 01/01/2009 - 12/31/2016
 - Data description:
 
 
 ![image](https://user-images.githubusercontent.com/43855029/132914704-b2c7ee79-0c99-482a-abfd-cc4575dcfe1b.png)
 
 - Input variables: all 14 climate variables
-- Output or target variable: Temperature at later date
+- Output or target variable: Temperature at a later date
 
 ### Objective
-- Using data from previous 5 days, forecast temperature in the next 12 hours
+- Using data from previous 5 days, forecast the temperature in the next 12 hours
 
 #### Loading library:
 
@@ -80,13 +80,13 @@ from sklearn.metrics import r2_score
 from numpy import array
 ```
 
-#### Loading Jena climate station data:
+#### Loading Jthe ena climate station data:
 
 ```python
 df = pd.read_csv("/zfs/citi/workshop_data/python_ml/jena_climate_2009_2016.csv")
 ```
 
-#### Check for any missing value
+#### Check for any missing values
 
 ```python
 #Check missing value
@@ -116,19 +116,19 @@ df_knnimpute.columns=df.columns[1:]
 print(df_knnimpute.isna().sum())
 ```
 
-Now all input data is clean without any missing value. Next step, we gonna use LASSO for variable selection:
+Now all input data is clean without any missing values. Next, we use LASSO for variable selection:
 
 #### Variable selection with LASSO
 
 Create set of input/output data.
-Here, the output variable is "T (degC)". However "Tpot (K)" and "Tdew (degC)" are very similar to the output, resulting in collinearity. Therefore, I would drop them off for now in order to check the influence of ther variables with the output:
+Here, the output variable is "T (degC)". However "Tpot (K)" and "Tdew (degC)" are very similar to the output, resulting in collinearity. Drop them for now in order to check the influence of the variables with the output:
 
 ```python
 x = df_knnimpute.drop(['T (degC)','Tpot (K)','Tdew (degC)'],1)
 y = df_knnimpute.loc[:,"T (degC)"]
 ```
 
-Apply LASSO to select the most influence input variables with output:
+Apply LASSO to select the most influential input variables with output:
 
 ```python
 from sklearn.linear_model import Lasso
@@ -147,7 +147,7 @@ for ld in lambdas:
     coefs.append(model_LS.coef_)
 ```
 
-Plot the MSE with lambda variation:
+Plot the MSE with a lambda variation:
 
 ```python
 plt.scatter(np.log10(lambdas), MSE,color="red")
@@ -159,7 +159,7 @@ plt.show()
 
 ![image](https://user-images.githubusercontent.com/43855029/133639140-80d66516-ebfd-4142-bddf-f419c49da276.png)
 
-Plot the corresponding coefficients with vayring lambda:
+Plot the corresponding coefficients with varying lambda variations:
 
 ```python
 coef_df = pd.DataFrame(coefs)
@@ -202,7 +202,7 @@ wd (deg)           0.000000
 Name: 79, dtype: float64
 ```
 
-Here we see that, the variables 'p (mbar)', 'rh (%)', 'VPmax (mbar)', 'rho (g/m**3)' also have good influence to the output.
+Here we see that the variables 'p (mbar)', 'rh (%)', 'VPmax (mbar)', 'rho (g/m**3)' also have good influence on the output.
 Therefore, we select all these variables into our input data together with T (degC):
 
 ```python
@@ -214,11 +214,11 @@ dfnew.head()
 
 #### Data partitioning
 
-- Data was collected at interval 10 minutes or 6 times an hour. Thus, resample the input data to hourly with the **sampling_rate** argument: **step=6**
-- Using historical data of 5 days in the past: 5 x 24 x 6 = **720 data points**
+- Data was collected at 10 minute intervals or 6 times an hour. Resample the input data to hourly with the **sampling_rate** argument: **step=6**
+- Use the historical data of the past 5 days: 5 x 24 x 6 = **720 data points**
 - To forecast temperature in the next 12 hours: 12 x 6 = **72 data points**
 - Data partition to **70% training** and **30% testing** in order of time
-- For Neural Network, following parameters are pre-selected:
+- For neural networks, the following parameters are pre-selected:
    - **Learning rate** = 0.001
    - **Batch size** = 256
    - **Epoch** = 10
@@ -236,7 +236,7 @@ batch_size = 256
 epochs = 10
 ```
 
-As input data has different range, so there would be the need for **standardization**
+Since the input data has a different range, you will need to perform **standardization**
 
 ```python
 from sklearn.preprocessing import MinMaxScaler
@@ -280,7 +280,7 @@ y_test = scaled_features.iloc[start_ytest:]["T (degC)"]
 ```
 
 
-For training data set, the updated keras (with tensorflow version 2.3 and above) has built-in function to prepare for time series modeling using given batch size and the length for historical data.
+For training data sets, the updated Keras (with Tensorflow version 2.3 and above) has built-in functions to prepare for time series modeling using given batch size and given length for historical data.
 
 ```python
 dataset_train = tf.keras.preprocessing.timeseries_dataset_from_array(
@@ -292,8 +292,8 @@ dataset_train = tf.keras.preprocessing.timeseries_dataset_from_array(
 )
 ```
 
-#### Using Keras to split training/testing data to different batch:
-Here, we utilize the preprocessing time series feature of keras to split training/testing data into different batch:
+#### Using Keras to split training/testing data into different batches:
+Here, we use the preprocessing time series feature of Keras to split training/testing data into different batches:
 
 ##### Training
 
@@ -345,7 +345,7 @@ Input shape: (256, 120, 5)
 Target shape: (256,)
 ```
 
-#### Build Deep learning model with LSTM framework:
+#### Build a deep learning model with an LSTM framework:
 
 ```python
 inputs = tf.keras.layers.Input(shape=(inputs.shape[1], inputs.shape[2]))
@@ -384,7 +384,7 @@ history = model.fit(
 ```
 
 
-#### Visualize the Training & Testing loss with 10 different epoches?
+#### Visualize the training & testing loss with 10 different epochs
 
 ```python
 def visualize_loss(history, title):
@@ -420,9 +420,9 @@ model = tf.keras.models.load_model('LSTM_Jena.keras')
 
 
 #### Prediction
-Modifying the given [Timeseries forecasting code](https://keras.io/examples/timeseries/timeseries_weather_forecasting/) to make predictions for 5 sets of values from validation set:
+Modify the given [Timeseries forecasting code](https://keras.io/examples/timeseries/timeseries_weather_forecasting/) to make predictions for 5 sets of values from the validation set:
 
-First, we need to create a rescale function back to original scale for T (degC)
+First, we need to create a rescale function back to original scale for `T (degC)`
 
 ```python
 #Create transformation function to rescale back to original

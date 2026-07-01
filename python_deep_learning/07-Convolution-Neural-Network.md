@@ -1,11 +1,11 @@
 # Convolution Neural Network for image classification
 
-# Convolutional Neural Network - CNN
+# Convolutional Neural Networks - CNN
 
 
-- CNNs are a type of ANN that uses the neuron, kernel, and activation functions.
-- Inputs must be in images (or assumed to be images)
-- Using Forward Propagation & Backpropagation techniques with certain properties for faster processing
+- CNNs are a type of ANN that use the neuron, kernel, and activation functions.
+- Inputs must be images (or assumed to be images)
+- Using forward propagation & backpropagation techniques with certain properties for faster processing
 - CNN works best for object detection, image classification, and computer vision
 
 ## Architecture of CNNs
@@ -14,13 +14,13 @@
 ![image](https://user-images.githubusercontent.com/43855029/129789560-452539b8-06c7-4a3b-8543-c2f6e5a6f9c6.png)
 [Source](http://henrysprojects.net/projects/conv-net.html)
 
-- A basic CNN consists of Convolution Layers, Max Pooling Layers and a fully connected Layer (Dense) before the output layer
+- A basic CNN consists of convolutional layers, max pooling layers, and a fully connected Dense layer before the output layer
 - A simple image can be flattened into 1D vectors and driven through the regular fully connected NN. However, this requires a lot of computational power if the image is large and has more color.
-- Therefore, we can use Convolution Layers and  Max Pooling
+- Therefore, we can use convolutional layers and  max pooling
 
-### Convolutional Layer (CNN or ConvNet)
+### Convolutional Layers (CNN or ConvNet)
 
-- Take a look at the simple gray scale image below which contains 10 pixels in width & height. The color scale has only 2 values (black & white) or (binary -1 and 1), therefore the size of the following image is 10x10x1:
+- Take a look at the simple gray scale image below which is 10 pixels in width & height. The color scale has only 2 values (black & white) or (binary -1 and 1). The size of the following image is 10x10x1:
 
 ![image](https://user-images.githubusercontent.com/43855029/129790068-408bbad8-8752-4153-9ce3-9099cae1995a.png)
 
@@ -28,38 +28,38 @@
 
 ![image](https://user-images.githubusercontent.com/43855029/129623983-173558ba-45f5-4a42-972d-a6252f7695e0.png)
 
-- CNN uses the Convolved Feature to reduce the image size by dot product with given kernel.
-- The image reduction without losing features and easier to process for good prediction
+- CNN uses the convolved feature to reduce the image size by dot product with a given kernel.
+- This allows for image reduction without losing features. The reduced image is easier to process for good prediction. 
 
 ![image](https://user-images.githubusercontent.com/43855029/129624312-db0f2ce1-4767-4a18-9a02-f5cee4c6cfe5.png)
 
-- So for 3 channel RGB colors, the image size have been reduced:
+- For 3 channel RGB colors, the image size has been reduced:
 
 ![image](https://user-images.githubusercontent.com/43855029/129624564-96d6d7e4-6409-4775-ad9d-2bf133fa0396.png)
 
-- In other word, the convoluted image from the RGB image would look like:
+- The convoluted image from the RGB image would look like:
 
 ![image](https://user-images.githubusercontent.com/43855029/129791297-fae899e5-1745-4fa0-b348-1785dea769ea.png)
 
 
 ### Pooling Layer
-- Similar to the Convolutional Layer, the Pooling layer is responsible for reducing the spatial size of the Convolved Feature.
-- This is to decrease the computational power required to process the data through dimensionality reduction
-- Two types of Pooling: Max Pooling & Average Pooling.
+- Similar to the convolutional layer, the pooling layer is responsible for reducing the spatial size of the convolved feature.
+- This decreases the computational power required to process the data through dimensionality reduction
+- Two types of pooling: max pooling & average pooling.
 
 ![image](https://user-images.githubusercontent.com/43855029/129624678-75532145-0e90-48d5-9703-c8ee626aa7f4.png)
 
- Max Pooling performs a lot better than Average Pooling.
+ Max pooling performs a lot better than average pooling.
 
-- The image after Max Pooling layer would look like:
+- The image after adding the max pooling layer would look like:
 
 ![image](https://user-images.githubusercontent.com/43855029/129791581-5d9fa47d-1390-44c2-b86a-f66273a9f7ca.png)
 
 
 ### Flatten Layer
-- Once the images have passed through the Convolution Layer and the Pooling Layer, its size has been reduced greatly and we are ready for MLP training (or moving to another Convolution step).
-- The image is then flattened to a column vector and passed through feed-forward NN and BackPropagation in every iteration.
-- The Softmax activation function is applied to classify the multi-output
+- Once the images have passed through the convolution layer and the pooling layer, the sizes have been reduced greatly and we are ready for MLP training (or moving to another convolution step).
+- The image is then flattened to a column vector and passed through feed-forward NN and backpropagation in every iteration.
+- The softmax activation function is applied to classify the multi-output
 
 More information can be found at Towards Data Science's [Guide to Convolutional Neural Networks](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53)
 
@@ -85,7 +85,7 @@ from tensorflow.keras.layers import Dense
 from tensorflow.keras.utils import to_categorical
 ```
 
-### Import convolution, max pooling and flatten as mentioned above:
+### Import convolutional layers, max pooling and flatten as mentioned above:
 ```python
 from tensorflow.keras.layers import Conv2D # convolutional layers to reduce image size
 from tensorflow.keras.layers import MaxPooling2D # Max pooling layers to further reduce image size
@@ -129,7 +129,7 @@ plt.show()
 ![image](https://user-images.githubusercontent.com/43855029/134049444-f95cd292-9b5f-40f9-852c-6bbe0a724d78.png)
 
 
-Using One Hot Encoding from Keras to convert the label:
+Using One-Hot Encoding from Keras to convert the label:
 
 ```python
 y_train = to_categorical(y_train)
@@ -139,8 +139,8 @@ print(y_test.shape)
 ```
 
 ### Construct a Convolutional Neural Network
-- For Convolution front end, starting with kernel size (3,3) with a number of filter 10 followed by Max Pooling Layer with pool_size = (2,2).
-- The 2D data after two Max Pooling layers is flattened directly.
+- For Convolution front end, starting with kernel size (3,3) with a number of filter 10 followed by max pooling layer with pool_size = (2,2).
+- The 2D data after two max pooling layers is flattened directly.
 
 ```python
 model = Sequential()

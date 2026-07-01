@@ -16,7 +16,7 @@ import keras
 - Convolution layer (use for model with image data)
 - Other layers
 
-For regular Deep Learning models we use fully connected or Dense layers:
+For regular deep learning models we use dense (fully connected) layers:
 
 ```python
 from tensorflow.keras.models import Sequential
@@ -35,7 +35,7 @@ from tensroflow.keras.layers import Dense
 **Dense** implements the operation: output = activation(dot(input, kernel) + bias); where:
 - activation is the element-wise activation function passed as the activation argument,
 - kernel is a weights matrix created by the layer,
-- bias is a bias vector created by the layer (only applicable if use_bias is True).
+- bias is a bias vector created by the layer (only applicable if use_bias=True).
 - More information on Dense can be found [Keras Core Layers: Dense](https://keras.io/api/layers/core_layers/dense)
 
 ### Create a Sequential model with N=2 as in image above:

@@ -4,7 +4,7 @@
 ## Using Keras to solve a Regression Model
 
 ### Prepare the data
-Here we use [Pima Indians Diabetes database](https://www.kaggle.com/uciml/pima-indians-diabetes-database) data:
+Here we use [Pima Indians Diabetes database](https://www.kaggle.com/uciml/pima-indians-diabetes-database) data from the National Institute of Diabetes and Digestive and Kidney Diseases:
 
 - We need to omit the header line of the data.
 
@@ -47,7 +47,7 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 
 Here, **adam** optimization is a stochastic gradient descent method that is based on adaptive estimation of first-order and second-order moments.
 
-According to Kingma et al., 2014, the method is "computationally efficient, has little memory requirement, invariant to diagonal rescaling of gradients, and is well suited for problems that are large in terms of data/parameters".
+According to [Adam: A Method for Stochastic Optimization](https://arxiv.org/abs/1412.6980), by Kingma et al. in 2014, the method is "computationally efficient, has little memory requirement, invariant to diagonal rescaling of gradients, and is well suited for problems that are large in terms of data/parameters".
 
 More information on the **adam** optimizer can be found at [Keras: Adam](https://keras.io/api/optimizers/adam/)
 
@@ -57,12 +57,12 @@ In addition to **adam**, there are many other optimizers:
 - [Adadelta](https://keras.io/api/optimizers/adadelta)
 - [Adagrad](https://keras.io/api/optimizers/adagrad)
 - [Adamax](https://keras.io/api/optimizers/adamax)
-- [Nadam](https://keras.io/api/optimizers/nadam)
+- [Nadam](https://keras.io/api/optimizers/Nadam)
 - [Ftrl](https://keras.io/api/optimizers/ftrl)
 
-There are also many other **loss** function.
+There are other **loss** functions.
 
-The purpose of **loss** functions is to compute the quantity that a model should seek to minimize during training. Details can be found at [Keras: Losses](https://keras.io/api/losses/)
+**Loss** functions compute the quantity that a model should seek to minimize during training. Details can be found at [Keras: Losses](https://keras.io/api/losses/)
 
 ### Fit model
 
@@ -96,7 +96,7 @@ model.fit(X_train, y_train, validation_data=(X_test,y_test), epochs=150, batch_s
 ```
 
 
-### Save & load Keras model
+### Save & load the Keras model
 ```python
 from keras.models import load_model
 
