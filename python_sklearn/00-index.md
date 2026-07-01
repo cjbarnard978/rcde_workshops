@@ -10,7 +10,7 @@ Machine learning is the science of teaching computers to reproduce an assigned
 procedure without being explicitly programmed to do so. It has been used in many practical
 applications such as self-driving cars, speech recognition, and email spam classification.
 It has been widely used not only in engineering (hydroinformatics, bioinformatics,
-genomics, geosciences and remote sensing, mechatronics) but also in economics, health
+genomics, geosciences and remote sensing, and mechatronics) but also in economics, health
 sciences, and the real estate industry. This workshop provides an broad
 introduction to machine learning with the Python programming language.
 Types of machine learning include: (1) Supervised
