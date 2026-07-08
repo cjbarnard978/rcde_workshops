@@ -17,11 +17,11 @@
 :class: dropdown
 
 - Reasons to make exploratory graphs:
-  - Understand data properties
-  - Find patterns in data
-  - Suggest modeling strategies
-  - "Debug" analyses
-  - Communicate results
+  - Understanding data properties
+  - Finding patterns in data
+  - Suggesting modeling strategies
+  - "Debuging" analyses
+  - Communicating results
   Participants will learn:
 - Principles of analytic graphics
 - Plotting systems and graphics devices in R
@@ -37,14 +37,14 @@
   - This starts with a blank plot and builds up the plot
   - Plotting is just a series of R commands
   - Flexible system
-- The Lattice plotting system (using `package::lattice`)
+- The lattice plotting system (using `package::lattice`)
   - Plots created using single function call
   - Good for putting many plots to screen
   - Cannot add to plots once created
 - The `ggplot` plotting system (using `package::ggplot2`)
-  - Similar to Lattice but easier
+  - Similar to lattice but easier
   - Many default mode
-  - Flexible between Base and Lattice
+  - Flexible between base and lattice
 
 
 ![image](https://user-images.githubusercontent.com/43855029/114093880-a7515980-9889-11eb-800e-0152f2e8c207.png)
@@ -141,11 +141,11 @@ dev.off()
 ```{admonition} Graphics Devices
 :class: dropdown
 
-- A graphics device is something where you can make a plot appear. When
-you make a plot in R, it has to be "sent" to a specific graphics device.
+- A graphics device is a space on your computer where a plot appears.  When
+you make a plot in R, it has to be "sent" to a specific graphics device. These can include:
 
 - A window on your computer (screen device): quick visualization
-- A PDF, PNG, JPEG file (file device) #recommended for documents, paper, presentation
+- A PDF, PNG, JPEG file (file device): recommended for documents, papers, presentations
 
 - The most common place for a plot to be "sent" is the screen device
   - On a Mac, the screen device is launched with Quartz()

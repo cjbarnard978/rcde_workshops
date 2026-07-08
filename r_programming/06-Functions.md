@@ -24,7 +24,7 @@ show you how to write your own functions.
 :class: dropdown
 
 - There are several built-in functions in R that can be used
-to perform analytical tasks. These include: `mean, min, max, quantile, summary`.
+to perform analytical tasks. These include: `mean`,`min`, `max`, `quantile`, `summary`.
 - For example, here's the `mean` function, which computes the
 arithmetic average of a vector:
 - Using function mean with missing value
@@ -188,7 +188,7 @@ mean(mtcars$mpg[mtcars$cyl==4])
 
 
 - Defensive programming encourages us to frequently check conditions
-and throw an error if something is wrong.
+and program the code to throw an error if something is wrong.
 - For example:
 
 ~~~r

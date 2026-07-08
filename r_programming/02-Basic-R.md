@@ -78,7 +78,7 @@ a <- 1
 b = 2
 ~~~
 
-- Note that assignment does not print out the value to an R console. It saves the variable in  the environment section of R Studio:
+- Note that assignment does not print out the value to an R console. It saves the variable in the environment section of R Studio:
 
 ![image](https://user-images.githubusercontent.com/43855029/114053543-09479a00-985d-11eb-965a-88462449ea89.png)
 

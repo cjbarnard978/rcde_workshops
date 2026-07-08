@@ -9,7 +9,7 @@
   - How do you manipulate a data frame in R?
   - How do you read text/csv file in R?
 - Objectives:
-  - Working with Matrices
+  - Working with matrices
   - Creating data frames
   - Importing and exporting data frames
   - Working with text/csv files
@@ -59,7 +59,7 @@ m <- matrix (0, nrow=3, ncol=4)
 m
 ~~~
 
-- When creating a matrix, you will need to specify number of rows and columns.
+- When creating a matrix, you will need to specify the number of rows and columns.
 - You can create a matrix from a vector:
 
 ~~~r
@@ -244,7 +244,7 @@ list1$l1[3]
 correspond to a particular variable, and rows correspond to
 a particular observation.
 
-- Data Frame characteristics:
+- Data frame characteristics:
   - Column names should not be empty
   - Row names should be unique
   - Data can be numeric, integers, or characters

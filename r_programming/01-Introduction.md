@@ -19,7 +19,7 @@ and Linux), Windows, and MacOS.
 ```
 
 
-```{admonition} R and RStudio on Palmetto
+```{admonition} R and RStudio on Palmetto 2
 :class: dropdown
 
 Users of the Palmetto 2 cluster can run R on Palmetto 2. The most user-friendly way to do this

@@ -12,7 +12,7 @@
   - Understanding the 5 data types / classes of objects
   - Working with vectors
 - Key points:
-  - Object Classifications
+  - Object classifications
   - Vectors in R
 
 ```
@@ -110,7 +110,7 @@ In R, there is a special way to denote missing values: `NA` ("not available").
 ```{admonition} Random Numbers & Seeds
 :class: dropdown
 
-- Create random numeric numbers using unif
+- Create random numeric numbers using runif
 
 ~~~r
 runif(1)

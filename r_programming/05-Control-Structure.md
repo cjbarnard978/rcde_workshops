@@ -11,8 +11,8 @@
   - Write conditional statements with `if...else` and `elseif()`
   - Write and understand `for()` loops
 - Key points:
-  - "Use `if` and `else`"
-  - "Use `for` loop "
+  - Use `if` and `else` structures
+  - Use `for` loops
 
 ```
 

@@ -9,17 +9,17 @@
   - Installing packages
   - Utilizing multiple cores
 - Key points:
-  - foreach() package
+  - `foreach()` package
 
 ```
 
 ```{admonition} Parallel packages in R
 :class: dropdown
 
-- The `doParallel` package is a "parallel backend" for the foreach() package. It provides the mechanism needed to execute foreach() loops in parallel.
+- The `doParallel` package is a "parallel backend" for the foreach() package. It provides the mechanism needed to execute `foreach()` loops in parallel.
 - The `foreach` package must be used in order to execute code in parallel.
-- The user must register a parallel backend to use, otherwise foreach will execute tasks sequentially, even when the %dopar% operator is used
-- User must register a parallel backend to use. To register doParallel with foreach, you must call the registerDoParallel function.
+- The user must register a parallel backend to use, otherwise `foreach` will execute tasks sequentially, even when the `%dopar%` operator is used
+- User must register a parallel backend to use. To register `doParallel` with `foreach`, you must call the `registerDoParallel` function.
 - We can speed up computation by using *parallel computing*, which
 runs computational processes simultaneously on different cores of our computer.
 Most modern computers (laptops or desktops) are multi-core, which means they have more
@@ -174,7 +174,7 @@ stopCluster(cl)
 ```{admonition} Using built-in parallel inside packages
 :class: dropdown
 
-- Many packages have built-in parallel function. Here we use a
+- Many packages have built-in parallel functions . Here we use a
 bootstrapping package: `boot`
 
 ~~~r
