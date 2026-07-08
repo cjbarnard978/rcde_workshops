@@ -19,7 +19,7 @@ a uniform interface of the functions themselves, as well as a way to standardize
 tasks (such as parameter tuning and variable importance).
 - The current release version can be found on CRAN and the project is
 hosted on github. Caret was developed by [Max Kuhn](https://topepo.github.io/caret/index.html)
-Here we only touch some of the very basic commands that are useful for our Machine Learning class.
+We will only touch on some of the very basic commands that are useful for our machine learning class.
 
 [caret cheatsheet](https://www.analyticsvidhya.com/infographics/Caret-Package-Infographic.pdf)
 
@@ -34,7 +34,7 @@ Here we only touch some of the very basic commands that are useful for our Machi
 
 
 
-### Install caret
+### Installing caret
 
 
 Start R Studio on Open OnDemand. Let's pick 10 CPUs, 60 GB of memory, any interconnect, no GPU, R version 4.0.3.
@@ -62,7 +62,7 @@ There are several steps that we will use `caret` for. For preprocessing raw data
 - Data partition: training and testing sets
 
 
-### Visualize important variables
+### Visualizing important variables
 
 
 Here we introduce the library `GGally`  with function `ggpairs` to help the user visualize the input data
@@ -87,14 +87,14 @@ between sepal width and sepal length: the correlation is negative for all data, 
 
 
 - Most of the time the input data has missing values (`NA, NaN, Inf`) due to data collection issues.
-- There are three main problems that missing data causes: missing data can introduce a substantial amount of bias, make the handling and analysis of the data more arduous, and create reductions in efficiency.
+- There are three main problems missing data causes: missing data can introduce a substantial amount of bias, make the handling and analysis of the data more arduous, and create reductions in efficiency.
 - These missing values need to be treated/cleaned before we can use the data because "Garbage in => Garbage out".
 - There are several ways to treat the missing values:
 
 - Method 1: remove all missing `NA` values
 
 ~~~r
-data("airquality") # Here we use this sample data because it contains missing value
+data("airquality") # Here we use this sample data because it contains missing values
 summary (airquality)
 new_airquality1 <- na.omit(airquality)
 summary (new_airquality1)
@@ -111,7 +111,7 @@ summary (new_airquality2)
 - Method 3: Use `Impute` to handle missing values
 In statistics, imputation is the process of replacing missing data with substituted values. Because missing data can create problems for analyzing data, imputation is seen as a way to avoid pitfalls involved with listwise deletion of cases that have missing values. That is to say, when one or more values are missing for a case, most statistical packages default to discarding any case that has a missing value, which may introduce bias or affect the representative status of the results. Imputation preserves all cases by replacing missing data with an estimated value based on other available information. Once all missing values have been imputed, the data set can then be analyzed using standard techniques for complete data. There have been many theories embraced by scientists to account for missing data but the majority of them introduce bias. A few of the well known attempts to deal with missing data include: hot deck and cold deck imputation; listwise and pairwise deletion; mean imputation; non-negative matrix factorization; regression imputation; last observation carried forward; stochastic imputation; and multiple imputation.
 
-Here we use `preProcess` function from `caret` to perform `bagImpute` (Bootstrap Aggregation Imputation):
+Here we use the `preProcess` function from `caret` to perform `bagImpute` (Bootstrap Aggregation Imputation):
 
 ~~~r
 library(caret)
@@ -121,9 +121,9 @@ summary (DataImputeBag)
 ~~~
 
 <!--
-- In addition to `bagImpute`, we also can use `knnImpute` (K-Nearest Neighbour Imputation)
-`knnImpute` can also be used to impute missing value, however, it standardizes the
-data after Imputing:
+- In addition to `bagImpute`, we also can use `knnImpute` (K-Nearest Neighbor Imputation)
+`knnImpute` can also be used to impute missing values. However, it standardizes the
+data after imputing:
 
 ~~~r
 MData <- airquality[,-c(1,5,6)]
@@ -135,7 +135,7 @@ RescaleDataM <- t(t(DataImputeKNN)*PreImputeKNN$std+PreImputeKNN$mean)
 ~~~
 
 **Note**
-`bagImpute` is more powerful and computational cost than `knnImpute`
+`bagImpute` is more powerful and has a higher computational cost than `knnImpute`
 
 -->
 

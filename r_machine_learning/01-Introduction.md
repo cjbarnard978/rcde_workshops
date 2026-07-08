@@ -1,10 +1,10 @@
 # Introduction to Machine Learning
 
-Very broadly speaking, machine learning is a discpline where an
+Very broadly speaking, machine learning is a discipline where an
 algorithm learns how to make predictions from data; ideally, the more
-data are available, the better the predictions get.
+data available, the better the predictions get.
 
-Two types of machine learning:
+There are wo types of machine learning:
 - Supervised machine learning: the algorithm learns the associations between "input" and "output" data (for example, between demographics and political preferences). It has two stages:
 1. *Training* the algorithm: we provide the algorithm with a set of inputs and outputs, and let it figure out the associations between them;
 2. *Testing* the algorithm: we obtain a set of inputs that were not used in the training, and use the algorithm to estimate the outputs.

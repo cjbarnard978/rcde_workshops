@@ -27,10 +27,10 @@ qsub -I -l select=1:ncpus=4:mem=32gb:interconnect=fdr,walltime=2:00:00
 ~~~
 
 - In order to run R, you will first need to load the R module. We
-have several versions of R installed on Palmetto 2, most recent being 4.0.3:
+have several versions of R installed on Palmetto 2, most recent being 4.4.0:
 
 ~~~bash
-module load r/4.0.5-gcc/9.5.0
+module load r/4.4.0-gcc/9.5.0
 ~~~
 
 - We can now open R in interactive mode (text-only console). Let's
@@ -64,7 +64,7 @@ can run this script with the `RScript` command:
 Rscript randmatrix.r
 ~~~
 
-- If you want to use RStudio on Palmetto 2, you can use Open OnDemand
+- If you want to use RStudio on Palmetto 2, you can use the Open OnDemand
 interface -- please see our [Open OnDemand manual](https://www.palmetto.clemson.edu/palmetto/openondemand/intro/).
 
 ```

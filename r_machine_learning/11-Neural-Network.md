@@ -3,7 +3,7 @@
 teaching: 20
 exercises: 0
 questions:
-- "How to use Neural Networks in machine learning model"
+- "How to use Neural Networks in a machine learning model"
 objectives:
 - "Learn how to use ANN in ML model"
 keypoints:

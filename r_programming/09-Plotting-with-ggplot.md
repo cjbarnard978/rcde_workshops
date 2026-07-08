@@ -15,9 +15,9 @@
 ```{admonition} ggplot
 :class: dropdown
 
-- `ggplot2` is a graphics package, written by Hadley Wickham, Chief Scientist at Posit. Wickham wrote ggplot 2 as a graduate student at Iowa State University. ggplot2 is based on the ideas from the book
+- `ggplot2` is a graphics package, written by [Hadley Wickham](https://hadley.nz/), Chief Scientist at Posit. Wickham wrote ggplot2 as a graduate student at Iowa State University. ggplot2 is based on the ideas from the book
 "Grammar of Graphics" by Leland Wilkinson. Let's install it (it
-will install multiple additional packages that it requires):
+will install several additional packages that ggplot2 requires):
 
 ~~~r
 install.packages("ggplot2")
@@ -31,7 +31,7 @@ library(ggplot2)
 :class: dropdown
 
 - A data frame
-- aes: aesthetic mappings showing how data is mapped using color, size
+- aes: aesthetic mappings show how data is mapped using color, size
 - geom: geometric objects like points, lines, shapes.
 - facets: for conditional plots and subsetting data.
 - stats: statistical transformations like binning, quanti les, smoothing.
@@ -43,12 +43,12 @@ library(ggplot2)
 ```
 
 
-```{admonition} Types of ggplot
+```{admonition} Types of plots in ggplot2
 :class: dropdown
 
 - Basic qplot
-  - Same as plot in Base plot
-  - Nicer graphics than Base plot
+  - Same as plots in base R plots
+  - Nicer graphics than base R plots
   - Difficult to customize
 - Advanced ggplot
   - Flexible with many built-in functions
@@ -105,8 +105,8 @@ qplot(Sepal.Length,data=iris,geom="density",
 ~~~
 
 - There are many more ways to use ggplot2. Some useful (and beautiful)
-examples of code are at r-statistics.co: Top 50 ggplot2 Visualizations-
-http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html
+examples of code are at [r-statistics.co: Top 50 ggplot2 Visualizations](
+http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html)
 
 ![image](https://user-images.githubusercontent.com/43855029/114096068-3c555200-988c-11eb-849a-1332fcf7c8f5.png)
 
@@ -124,7 +124,7 @@ qplot(Sepal.Length,Petal.Length,facets=.~Species, data=iris)
 
 ```
 
-```{admonition} Advanced ggplot
+```{admonition} Advanced plotting with ggplot
 :class: dropdown
 
 - Sample plot
@@ -209,7 +209,7 @@ g + geom_histogram(aes(fill=class),
                    size=.1) +   # change number of bins
   labs(title="Histogram with Fixed Bins",
        subtitle="Engine Displacement across Vehicle Classes",
-       x="enginer displacement (m)",
+       x="engine displacement (m)",
        y="Frequency count")
 ~~~
 
@@ -309,8 +309,8 @@ ggplot(some.eu.maps, aes(x = long, y = lat)) +
 
 ![image](https://user-images.githubusercontent.com/43855029/122972677-6633f600-d35e-11eb-9c3c-4b90db22b25e.png)
 
-- Plot a Shapefile for a geography study
-  - Download shape file data [at ArcGIS's opendata](https://opendata.arcgis.com/datasets/a21fdb46d23e4ef896f31475217cbb08_1.zip)
+- Plot a shapefile for a geography study
+  - Download shapefile data [at ArcGIS's opendata](https://opendata.arcgis.com/datasets/a21fdb46d23e4ef896f31475217cbb08_1.zip)
   - Store it in your folder: c:/R/GIS/ in Windows or /user/R/GIS in MacOS
   - Unzip it and rename all files to `Countries_WGS84.*` under `C:/GIS/`
 - Install additional packages:
@@ -339,7 +339,7 @@ llgridlines(gfile,lty=5)
 
 ![image](https://user-images.githubusercontent.com/43855029/114115693-4e95b700-98b1-11eb-8f93-0a27c0922e35.png)
 
-- Plot raster
+- Plot raster data
   - Here we will plot a raster database using a global land cover data set.
   The data can be downloaded from [here](http://due.esrin.esa.int/files/Globcover2009_V2.3_Global_.zip).
 - Unzip and put the raster data in your working directory:
